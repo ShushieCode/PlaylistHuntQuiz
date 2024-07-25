@@ -72,12 +72,8 @@ button {
     display: none;
 }
 
-#answer-buttons {
+#answer-buttons.btn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.btn-container {
-width: 100%; !important
 }
