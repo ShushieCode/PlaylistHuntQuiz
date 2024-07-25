@@ -51,5 +51,5 @@ button {
 
 .logo {
     height: auto;
-    width: 100px;
+    width: 20%; !important
 }
