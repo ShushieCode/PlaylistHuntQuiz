@@ -82,4 +82,7 @@ button {
 #answer-buttons .btn {
     width: 100%;
     box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 1px;
+    border-color: #d3d3d3;
 }
