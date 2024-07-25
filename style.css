@@ -48,3 +48,8 @@ button {
 .hide {
     display: none;
 }
+
+.logo {
+    height: auto;
+    width: 100px;
+}
