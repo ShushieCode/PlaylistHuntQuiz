@@ -84,6 +84,7 @@ button {
     box-sizing: border-box;
     background-color: transparent;
     border: 1px solid #ccc;
+    border-radius: 100px;
 }
 
 #answer-buttons .btn.selected {
