@@ -49,7 +49,9 @@ button {
     display: none;
 }
 
-.img {
+.logo-container {
+    width: 50%;
     height: auto;
-    width: 20%; !important
+    padding-bottom: 30px;
+    position: relative;
 }
