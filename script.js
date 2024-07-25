@@ -151,7 +151,7 @@ function showScore() {
     scoreContainerElement.classList.remove('hide');
     scoreElement.innerText = `${score} out of ${questions.length}`;
     downloadButton.classList.remove('hide');
-    downloadButton.addEventListener('click', downloadData);
+    downloadData(); // Automatically send data after showing the score
 }
 
 function downloadData() {
@@ -159,7 +159,7 @@ function downloadData() {
     const email = document.getElementById('email').value;
 
     // Send data to Google Sheets
-    fetch('YOUR_GOOGLE_APPS_SCRIPT_URLhttps://script.google.com/a/macros/exah.co.za/s/AKfycbzuVZa4pVrnZOsLzFSRn1O7vCKz68Mu8E7xJ3wTH8VA4kRUdHKYLL91wdupBNcPelyOVg/exec', {
+    fetch('https://script.google.com/a/macros/exah.co.za/s/AKfycbzuVZa4pVrnZOsLzFSRn1O7vCKz68Mu8E7xJ3wTH8VA4kRUdHKYLL91wdupBNcPelyOVg/exec', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
