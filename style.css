@@ -9,10 +9,16 @@ body {
 }
 
 #logo-container {
+    text-align: center;
     width: 50%;
     height: auto;
     padding-bottom: 30px;
     position: relative;
+}
+
+#logo {
+    max-width: 50%;
+    height: auto;
 }
 
 #intro-container, #quiz-container, #score-container {
