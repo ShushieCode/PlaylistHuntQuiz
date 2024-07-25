@@ -39,6 +39,12 @@ let timeLeft;
 let timer;
 let selectedButton = null;
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('quizCompleted')) {
+        showCompletedMessage();
+    }
+});
+
 userFormElement.addEventListener('submit', startQuiz);
 submitButton.addEventListener('click', () => {
     selectAnswer();
@@ -49,6 +55,10 @@ nextButton.addEventListener('click', nextQuestion);
 
 function startQuiz(event) {
     event.preventDefault();
+    if (localStorage.getItem('quizCompleted')) {
+        showCompletedMessage();
+        return;
+    }
     introContainerElement.classList.add('hide');
     quizContainerElement.classList.remove('hide');
     setNextQuestion();
@@ -152,6 +162,14 @@ function showScore() {
     scoreElement.innerText = `${score} out of ${questions.length}`;
     downloadButton.classList.remove('hide');
     downloadButton.addEventListener('click', downloadCSV);
+    localStorage.setItem('quizCompleted', 'true');
+}
+
+function showCompletedMessage() {
+    introContainerElement.classList.add('hide');
+    quizContainerElement.classList.add('hide');
+    scoreContainerElement.classList.add('hide');
+    document.getElementById('completed-container').classList.remove('hide');
 }
 
 function downloadCSV() {
