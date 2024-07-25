@@ -71,3 +71,9 @@ button {
 .hide {
     display: none;
 }
+
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
