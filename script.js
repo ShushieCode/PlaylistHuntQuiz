@@ -39,12 +39,6 @@ let timeLeft;
 let timer;
 let selectedButton = null;
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('quizCompleted')) {
-        showCompletedMessage();
-    }
-});
-
 userFormElement.addEventListener('submit', startQuiz);
 submitButton.addEventListener('click', () => {
     selectAnswer();
@@ -55,10 +49,6 @@ nextButton.addEventListener('click', nextQuestion);
 
 function startQuiz(event) {
     event.preventDefault();
-    if (localStorage.getItem('quizCompleted')) {
-        showCompletedMessage();
-        return;
-    }
     introContainerElement.classList.add('hide');
     quizContainerElement.classList.remove('hide');
     setNextQuestion();
@@ -161,25 +151,26 @@ function showScore() {
     scoreContainerElement.classList.remove('hide');
     scoreElement.innerText = `${score} out of ${questions.length}`;
     downloadButton.classList.remove('hide');
-    downloadButton.addEventListener('click', downloadCSV);
-    localStorage.setItem('quizCompleted', 'true');
+    downloadButton.addEventListener('click', downloadData);
 }
 
-function showCompletedMessage() {
-    introContainerElement.classList.add('hide');
-    quizContainerElement.classList.add('hide');
-    scoreContainerElement.classList.add('hide');
-    document.getElementById('completed-container').classList.remove('hide');
-}
-
-function downloadCSV() {
+function downloadData() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const csvContent = `Name,Email,Score\n${name},${email},${score}`;
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.setAttribute('href', url);
-    a.setAttribute('download', 'quiz_score.csv');
-    a.click();
+
+    // Send data to Google Sheets
+    fetch('YOUR_GOOGLE_APPS_SCRIPT_URLhttps://script.google.com/a/macros/exah.co.za/s/AKfycbzuVZa4pVrnZOsLzFSRn1O7vCKz68Mu8E7xJ3wTH8VA4kRUdHKYLL91wdupBNcPelyOVg/exec', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, score })
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
