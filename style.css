@@ -10,9 +10,10 @@ body {
 
 #logo-container {
     text-align: center;
-    width: 50%;
+    width: 100%;
     height: auto;
     padding-bottom: 30px;
+    text-align: center;
     position: relative;
 }
 
