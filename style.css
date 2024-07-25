@@ -21,6 +21,11 @@ body {
     height: auto;
 }
 
+#name #email {
+    margin: 10px;
+    
+}
+
 #intro-container, #quiz-container, #score-container {
     background: #fff;
     padding: 20px;
