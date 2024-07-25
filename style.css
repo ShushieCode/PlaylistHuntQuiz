@@ -25,6 +25,10 @@ body {
     margin-bottom: 10px;
 }
 
+#name {
+    margin-bottom: 30px;
+}
+
 #intro-container, #quiz-container, #score-container {
     background: #fff;
     padding: 20px;
