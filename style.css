@@ -21,14 +21,6 @@ body {
     height: auto;
 }
 
-#name {
-    margin-bottom: 10px;
-}
-
-#email {
-    margin-bottom: 10px;
-}
-
 #intro-container, #quiz-container, #score-container {
     background: #fff;
     padding: 20px;
@@ -39,9 +31,19 @@ body {
     text-align: center;
 }
 
-.btn-container {
+.input-group {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 48%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button {
@@ -69,5 +71,3 @@ button {
 .hide {
     display: none;
 }
-
-
