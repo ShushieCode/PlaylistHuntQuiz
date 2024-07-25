@@ -21,7 +21,7 @@ body {
     height: auto;
 }
 
-#name {
+input {
     margin: 10px;
 }
 
