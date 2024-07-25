@@ -64,14 +64,6 @@ button {
     font-weight: bold;
 }
 
-#answer-buttons .btn {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    border-radius: 1px;
-    border-color: #d3d3d3;
-}
-
 .btn.selected {
     background-color: #d3d3d3;
 }
@@ -85,4 +77,15 @@ button {
     flex-direction: column;
     align-items: center;
     width: 100%;
+}
+
+#answer-buttons .btn {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+
+#answer-buttons .btn.selected {
+    background-color: #d3d3d3;
 }
