@@ -8,6 +8,13 @@ body {
     background-color: #f4f4f4;
 }
 
+#logo-container {
+    width: 50%;
+    height: auto;
+    padding-bottom: 30px;
+    position: relative;
+}
+
 #intro-container, #quiz-container, #score-container {
     background: #fff;
     padding: 20px;
@@ -49,9 +56,4 @@ button {
     display: none;
 }
 
-#logo-container {
-    width: 50%;
-    height: auto;
-    padding-bottom: 30px;
-    position: relative;
-}
+
