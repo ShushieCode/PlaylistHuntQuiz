@@ -21,8 +21,8 @@ body {
     height: auto;
 }
 
-input {
-    margin: 10px;
+#name {
+    margin-bottom: 10px;
 }
 
 #intro-container, #quiz-container, #score-container {
