@@ -21,9 +21,8 @@ body {
     height: auto;
 }
 
-#name #email {
+#name {
     margin: 10px;
-    
 }
 
 #intro-container, #quiz-container, #score-container {
