@@ -30,7 +30,6 @@ const submitButton = document.getElementById('submit-button');
 const timerElement = document.getElementById('time-left');
 const scoreContainerElement = document.getElementById('score-container');
 const scoreElement = document.getElementById('score');
-const downloadButton = document.getElementById('download-button');
 const nextButton = document.getElementById('next-button');
 
 let currentQuestionIndex = 0;
@@ -150,27 +149,30 @@ function showScore() {
     quizContainerElement.classList.add('hide');
     scoreContainerElement.classList.remove('hide');
     scoreElement.innerText = `${score} out of ${questions.length}`;
-    downloadButton.classList.remove('hide');
-    downloadData(); // Automatically send data after showing the score
+    sendDataToSheet();
 }
 
-function downloadData() {
+function sendDataToSheet() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
+    const data = {
+        name: name,
+        email: email,
+        score: score
+    };
 
-    // Send data to Google Sheets
-    fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+    fetch('https://script.google.com/a/macros/exah.co.za/s/AKfycbzuVZa4pVrnZOsLzFSRn1O7vCKz68Mu8E7xJ3wTH8VA4kRUdHKYLL91wdupBNcPelyOVg/exec', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name, email, score })
+        body: JSON.stringify(data)
     })
     .then(response => response.text())
     .then(data => {
         console.log('Success:', data);
     })
-    .catch(error => {
+    .catch((error) => {
         console.error('Error:', error);
     });
 }
