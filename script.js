@@ -159,7 +159,7 @@ function downloadData() {
     const email = document.getElementById('email').value;
 
     // Send data to Google Sheets
-    fetch('https://script.google.com/a/macros/exah.co.za/s/AKfycbzuVZa4pVrnZOsLzFSRn1O7vCKz68Mu8E7xJ3wTH8VA4kRUdHKYLL91wdupBNcPelyOVg/exec', {
+    fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
